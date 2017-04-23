@@ -7,27 +7,41 @@
  */
 public class Alquiler
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private static final int VALOR_MULTIPLICADOR_ESCALA = 10;
+    private static final int VALOR_MULTIPLICADOR_BERNUA = 300;
+    private int diasOcupacion;
+    private int posicionAmarre;
+    private Barco barco;
 
     /**
      * Constructor for objects of class Alquiler
      */
-    public Alquiler()
+    public Alquiler(int numDias,Barco barco, int posicionAmarre)
     {
-        // initialise instance variables
-        x = 0;
+        diasOcupacion = numDias;
+        this.barco = barco;
+        this.posicionAmarre = posicionAmarre;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+     * Devuelve el toString de la clase Alquiler
+    */
+    public String toString()
     {
-        // put your code here
-        return x + y;
+        String cadenaADevolver = "Numero de dias ocupando el amarre" + diasOcupacion + "\n";
+        cadenaADevolver += "Numero de amarre" + posicionAmarre + "\n";
+        cadenaADevolver += "Barco:" + barco + "\n";
+        return cadenaADevolver;
+    }
+    
+    /**
+     * Calcula el precio del alquiler según una formula:
+     * El número de días de ocupación multiplicado por un valor en función del barco (esta valor es el resultante de multiplicar por 10 los metros de eslora). 
+     * Al resultado se le suma la cantidad obtenida de sumar un valor ﬁjo (300 euros) multiplicado por el coeficiente de Bernua del barco
+    */
+    public float getPrecioAlquiler()
+    {
+        float precioAlquiler = diasOcupacion * (10 * (float)barco.getEslora()) + VALOR_MULTIPLICADOR_BERNUA * barco.getCoeficienteBernue();
+        return precioAlquiler;
     }
 }
