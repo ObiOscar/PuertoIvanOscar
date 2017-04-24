@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Alquiler here.
  * 
@@ -7,8 +6,8 @@
  */
 public class Alquiler
 {
-    private static final int VALOR_MULTIPLICADOR_ESCALA = 10;
-    private static final int VALOR_MULTIPLICADOR_BERNUA = 300;
+    private static final int VALOR_MULTIPLICADOR_ESCALA = 10;       //Se usa para la formula del coste de alquiler
+    private static final int VALOR_MULTIPLICADOR_BERNUA = 300;      //Se usa para la formula del csote de alquiler  
     private int diasOcupacion;
     private int posicionAmarre;
     private Barco barco;
