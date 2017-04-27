@@ -20,8 +20,7 @@ public class Yate extends EmbarcacionAMotor
     {
         String textoADevolver = " ";
         textoADevolver += super.toString();
-        textoADevolver += "Número de camarotes : " + numCamarotes;
-        System.out.println(textoADevolver);
+        textoADevolver += "    Número de camarotes : " + numCamarotes + "\n";
         return textoADevolver;
         
        

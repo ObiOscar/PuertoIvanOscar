@@ -27,9 +27,9 @@ public class Alquiler
     */
     public String toString()
     {
-        String cadenaADevolver = "Numero de dias ocupando el amarre" + diasOcupacion + "\n";
-        cadenaADevolver += "Numero de amarre" + posicionAmarre + "\n";
-        cadenaADevolver += "Barco:" + barco + "\n";
+        String cadenaADevolver = "-Numero de dias ocupando el amarre " + diasOcupacion + "\n";
+        cadenaADevolver += "-Numero de amarre " + posicionAmarre + "\n";
+        cadenaADevolver += "-Barco:\n" + barco + "\n";
         return cadenaADevolver;
     }
     

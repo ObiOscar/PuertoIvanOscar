@@ -29,8 +29,8 @@ public class Persona
     public String toString()
     {
         String textoADevolver = " ";
-        textoADevolver += "Nombre: " + nombre  + "\n";
-        textoADevolver += "DNI: " + dni +"\n";
+        textoADevolver += "  Nombre: " + nombre  + "\n";
+        textoADevolver += "    DNI: " + dni;
       
         return textoADevolver;
         

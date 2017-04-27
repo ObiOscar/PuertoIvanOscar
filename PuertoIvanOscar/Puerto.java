@@ -78,7 +78,8 @@ public class Puerto
                  System.out.println("Amarre " + (numeroAmarre) + " Libre");
             }
             else{
-                 System.out.println("Amarre " + (numeroAmarre)  + " Ocupado");
+                 System.out.println("Amarre " + (numeroAmarre)  + " Ocupado");  
+                 System.out.println(amarre[numeroAmarre].toString());
             }
         } 
         System.out.println("\n");

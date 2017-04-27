@@ -21,10 +21,10 @@ public abstract class Barco
     public String toString()
     {
         String textoADevolver = " ";
-        textoADevolver += "Propietario : " + propietario.getNombre() + "\n";
-        textoADevolver += "Matricula : " + matricula + "\n";
-        textoADevolver += "Eslora : " + eslora + "\n";
-        textoADevolver += "Año de fabricación : " + anofabricacion + "\n";
+        textoADevolver += "Propietario : \n " + propietario.toString() + "\n";
+        textoADevolver += "    Matricula : " + matricula + "\n";
+        textoADevolver += "    Eslora : " + eslora + "\n";
+        textoADevolver += "    Año de fabricación : " + anofabricacion + "\n";
         return textoADevolver;
     }
     public double getEslora()

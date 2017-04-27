@@ -23,7 +23,7 @@ public class EmbarcacionAMotor extends Barco
     {
         String textoADevolver = " ";
         textoADevolver += super.toString();
-        textoADevolver += "Potencia : " + potencia + "\n";
+        textoADevolver += "    Potencia : " + potencia + "\n";
         return textoADevolver;
         
     }
