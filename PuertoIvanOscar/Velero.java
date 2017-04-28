@@ -1,28 +1,29 @@
 
 /**
- * Write a description of class Velero here.
+ * Es la clase Velero, sera una hija clase de la clase barco
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ *@author ivan
+ *@version 1.0
  */
 public class Velero extends Barco
 {
     private int numMastiles;
 
     /**
-     * Constructor for objects of class Velero
+     * Constructor de la calse Velero
+     * los otros parametros son de la clase padre
+     * @param numCamarote sera el numero de camarote que tiene el yate
      */
     public Velero(String matricula , double eslora , int anofabricacion , Persona propietario , int numMastiles)
     {
         super(matricula, eslora , anofabricacion , propietario);
         this.numMastiles = numMastiles;
     }
+    
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
+     * Devuelve el toString de la clase Velero
+     * @return cadenaADevolver nos devuelve el toString de la clase padre (Barco) y tambien el numero de mastiles
+    */
     public String toString()
     {
         String textoADevolver = " ";
@@ -31,6 +32,10 @@ public class Velero extends Barco
        return textoADevolver;
     }
     
+    /**
+     * sobrescribe el metodo abstracto de la clase barco
+     * @return numeroMastiles es el atributo numeroMastiles
+     */
     public int getCoeficienteBernue()
     {
         int coefBernua = numMastiles;

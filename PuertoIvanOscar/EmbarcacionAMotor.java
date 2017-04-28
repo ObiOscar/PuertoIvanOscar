@@ -1,11 +1,23 @@
-
+/**
+ * Es la clase embarcacionAMotor, sera una hija clase de la clase barco
+ * 
+ *@author Oscar Fernandez Rodriguez
+ *@version 1.0
+ */
 public class EmbarcacionAMotor extends Barco
 {
-    // instance variables - replace the example below with your own
+    /**
+     * la potencia que tiene el motor del barco, siempre en CV
+     */
     private int potencia;
 
     /**
-     * Constructor for objects of class EmbarcacionAMotor
+     * Constructor de la calse EmbarcacionAMotor
+     * @param matricula Es la matricula del barco
+     * @param eslora son los metros de eslora del barco
+     * @param ano año del barco
+     * @param propietario es el propietario del barco
+     * @param potencia es la potencia del barco medido en CV
      */
     public EmbarcacionAMotor(String matricula , double eslora , int anofabricacion , Persona propietario , int potencia)
     {
@@ -14,11 +26,9 @@ public class EmbarcacionAMotor extends Barco
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
+     * Devuelve el toString de la clase EmbarcacionAMotor
+     * @return cadenaADevolver nos devuelve el toString de la clase padre (Barco) y el parametro de la clase EmbarcacionAMotor (potencia)
+    */
     public String toString()
     {
         String textoADevolver = " ";
@@ -27,6 +37,11 @@ public class EmbarcacionAMotor extends Barco
         return textoADevolver;
         
     }
+    
+    /**
+     * sobrescribe el metodo abstracto de la clase barco
+     * @return potencia devueve la potencia
+     */
     public int getCoeficienteBernue()
     {
         int coefBernua = potencia;
