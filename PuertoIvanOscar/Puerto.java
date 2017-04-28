@@ -1,22 +1,32 @@
-/**
-    En el puerto naútico recién construido en Santander alquilan amarres para que atraquen barcos de distinto tipo. En la actualidad hay construidos 4 amarres.
-    Para cada alquiler de un amarre se guarda el cliente que lo va a usar, el numero de días de alquiler, la posición del amarre (0, 1, 2 o 3) y el barco que lo ocupará.
-    De un cliente solo nos interesa guardar su nombre y su DNI.
-    Un barco se caracteriza por su matrícula, su eslora (la longitud de la embarcación) en metros y su año de fabricación.
-    El precio del alquiler a pagar se calcula a partir del número de días de ocupación multiplicado por un valor en función del barco (esta valor es el resultante de multiplicar por 10 los metros de eslora). Al resultado se le suma la cantidad obtenida de sumar un valor ﬁjo (300 euros) multiplicado por el coeficiente de Bernua del barco.
-    El coeficiente de Bernua se calcula en función del tipo de barco:
-    El número de mástiles para veleros.
-    La potencia en CV para embarcaciones deportivas a motor.
-    La potencia en CV más número de camarotes para embarcaciones deportivas a motor de lujo (yates).
-    Se pide que crees un proyecto en BlueJ que permita al empleado del puerto gestionar los alquileres de los amarres, pudiendo introducir nuevos alquileres en el momento en que llega un nuevo cliente (a los que el amarre se le asigna automáticamente controlando si hay amarres disponibles), pudiendo ver el estado actual de los amarres y pudiendo liquidar el alquiler de un amarre liberando la ocupación del mismo.
- */
+   /**
+    *En el puerto naútico recién construido en Santander alquilan amarres para que atraquen barcos de distinto tipo. En la actualidad hay construidos 4 amarres.
+    *Para cada alquiler de un amarre se guarda el cliente que lo va a usar, el numero de días de alquiler, la posición del amarre (0, 1, 2 o 3) y el barco que lo ocupará.
+    *De un cliente solo nos interesa guardar su nombre y su DNI.
+    *Un barco se caracteriza por su matrícula, su eslora (la longitud de la embarcación) en metros y su año de fabricación.
+    *El precio del alquiler a pagar se calcula a partir del número de días de ocupación multiplicado por un valor en función del barco (esta valor es el resultante de multiplicar por 10 los metros de eslora). Al resultado se le suma la cantidad obtenida de sumar un valor ﬁjo (300 euros) multiplicado por el coeficiente de Bernua del barco.
+    *El coeficiente de Bernua se calcula en función del tipo de barco:
+    *El número de mástiles para veleros.
+    *La potencia en CV para embarcaciones deportivas a motor.
+    *La potencia en CV más número de camarotes para embarcaciones deportivas a motor de lujo (yates).
+    *Se pide que crees un proyecto en BlueJ que permita al empleado del puerto gestionar los alquileres de los amarres, pudiendo introducir nuevos alquileres en el momento en que llega un nuevo cliente (a los que el amarre se le asigna automáticamente controlando si hay amarres disponibles), pudiendo ver el estado actual de los amarres y pudiendo liquidar el alquiler de un amarre liberando la ocupación del mismo.
+    
+    *@author Oscar Fernandez Rodriguez
+    *@version 1.0
+    */
 public class Puerto
 {
+    /**
+      *Constante de los amarres que tiene el puerto, si en un futuro el puerto decide aumentar amarres, simplemente se cambiará este entero
+      */
     private static final int CANTIDAD_AMARRES = 4;      //Constante de los amarres que tiene el puerto, si en un futuro el puerto decide aumentar amarres, simplemente se cambiará este entero
+    
+    /**
+      *Un array de tipo Alquiler que guarda los amarres
+      */
     private Alquiler[] amarre;                          //Un array de tipo Alquiler que guarda los amarres
 
     /**
-     * Constructor for objects of class Puerto
+     * constructor de la clase puerto, inicializamos el amarre
      */
     public Puerto()
     {
@@ -25,6 +35,11 @@ public class Puerto
 
     /**
      * Mira a ver si hay amarres libres. Si no los hay devuelve -1; en caso contrario, ubica un objeto "Alquiler" en el primer amarre libre y devuelve el coste de este alquiler.
+     * @param numDias Los numeros de dias que el cliente quiere dejar el barco
+     * @param barco es un objeto de la calse Barco que es el barco que el cliente quiere dejar
+     * @return precioOError Es el precio de error, si no hay amarres libres, devuelve -1 sino el precio del amarre.
+     * @see float
+     * 
      */
     public float alquilarAmarre (int numDias, Barco barco)
     {
@@ -40,11 +55,13 @@ public class Puerto
     
     /**
      * Mira si el amarre indicado se corresponde con uno alquilado y elimina el objeto "Alquiler" ubicado en ese amarre, devolviendo también el coste del alquiler. Si la transacción no se puede completar, devuelve -1.
+     * @param posicionAmarre es un numero que nos introducen por parametro que nos indica el numero de puerto
+     * @return precio devuelve -1 en el caso que no encuentre el puerto, si lo encuentra devuelve el precio.
      */
     public float liquidarAlquilerAmarre (int posicionAmarre)
     {
         float precio = -1;
-        boolean sePuedeLiberar = false;     //En el caso que ningun amarre se pueda liberar, false, sino true
+        boolean sePuedeLiberar = false;             //En el caso que ningun amarre se pueda liberar, false, sino true
 
         //posicionAmarre = posicionAmarre -1;       //Si el operario no cuenta los amarres de 0 a 3, sino de 1 a 4
         
@@ -87,6 +104,7 @@ public class Puerto
     
     /**
      * Devuelve la posicion del primer amarre libre o -1 sino hay amarre libre
+     * @return primerAmarreLibre devuelve -1 en el caso que encuentre amarres libres, sino la posicion del primer amarre libre
      */
     public int posicionPrimerAmarre ()
     {
@@ -105,6 +123,7 @@ public class Puerto
     
     /**
      * Devuelve true si hay amarres libres y false sino lo hay.
+     * @return amarreLibre devuelve false en caso de que no existan amarres libres o true si los encuentra
      */
     public boolean hayAmarresLibres ()
     {
